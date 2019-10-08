@@ -7,18 +7,18 @@ class NavBar extends Component {
     return (
       <Menu pointing vertical>
         <Menu.Item
-          name='home'
-          active={this.props.activeItem === "home" ? this.props.activeItem : null}
+          name='overview'
+          active={this.props.activeItem === "overview" ? this.props.activeItem : null}
           onClick={this.props.handleItemClick}
         />
         <Menu.Item
-          name='messages'
-          active={this.props.activeItem === "messages" ? this.props.activeItem : null}
+          name='resume'
+          active={this.props.activeItem === "resume" ? this.props.activeItem : null}
           onClick={this.props.handleItemClick}
         />
         <Menu.Item
-          name='friends'
-          active={this.props.activeItem === "friends" ? this.props.activeItem : null}
+          name='testimonials'
+          active={this.props.activeItem === "testimonials" ? this.props.activeItem : null}
           onClick={this.props.handleItemClick}
         />
       </Menu>
