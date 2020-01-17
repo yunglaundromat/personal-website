@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import NavBar from './components/NavBar'
 import TitleCard from './components/TitleCard'
 import AppContainer from './containers/AppContainer'
+import Resume from './components/Resume'
+import Testimonials from './components/Testimonials'
+import { Grid } from 'semantic-ui-react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css';
 
 class App extends Component {
@@ -19,12 +23,26 @@ class App extends Component {
 
     return (
       <div className="App">
-        <TitleCard />
-        <NavBar
-        activeItem={this.state.activeItem}
-        handleItemClick={this.handleItemClick}
-        />
-        <AppContainer activeItem={this.state.activeItem}/>
+        <Grid>
+  				<Grid.Row centered>
+            <Grid.Column>
+    					<Switch>
+    						<Route path="/overview" render={(routeProps) => {
+    							return <AppContainer {...routeProps}
+                    />
+    						}} />
+    						<Route path="/resume" render={(routeProps) => {
+    							return <Resume {...routeProps}
+    								/>
+    						}} />
+                <Route path="/testimonials" render={(routeProps) => {
+    							return <Testimonials {...routeProps}
+    								/>
+    						}} />
+    					</Switch>
+            </Grid.Column>
+  				</Grid.Row>
+  			</Grid>
       </div>
     )
   }
